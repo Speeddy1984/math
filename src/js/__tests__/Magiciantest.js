@@ -7,14 +7,8 @@ test("Magician with distance > 1 and w/o stoned", () => {
 
 test("Magician with distance > 1 and with stoned", () => {
   const magician = new Magician();
-  magician.setStoned(true);
+  magician.stoned = true;
   expect(magician.getAttack(2)).toEqual(85);
-});
-
-test("Magician with distance = 1 and with stoned", () => {
-  const magician = new Magician();
-  magician.setStoned(true);
-  expect(magician.getAttack(1)).toEqual(100);
 });
 
 test("Magician with distance = 1 and w/o stoned", () => {
@@ -22,8 +16,8 @@ test("Magician with distance = 1 and w/o stoned", () => {
   expect(magician.getAttack(1)).toEqual(100);
 });
 
-test("Set stoned", () => {
+test("Magician with distance = 1 and with stoned", () => {
   const magician = new Magician();
-  magician.setStoned(true);
-  expect(magician.getStoned(true)).toEqual(true);
+  magician.stoned = true;
+  expect(magician.getAttack(1)).toEqual(100);
 });

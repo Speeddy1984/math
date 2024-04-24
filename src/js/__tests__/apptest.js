@@ -1,7 +1,7 @@
 import Character from "../app"
 
-test('getAttack returns correct attack', () => {
+test('get/set attack working correctly', () => {
   const character = new Character();
-  character.setAttack(95);
-  expect(character.getAttack()).toEqual(95);
+  character.attack = 95;
+  expect(character.attack).toEqual(95);
 });
