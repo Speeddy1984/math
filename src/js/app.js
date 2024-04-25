@@ -29,4 +29,12 @@ export default class Character {
       const stoneValue = Math.log2(distance) * 5;
       return baseAttack - stoneValue;
   }
+
+  getAttack(distance) {
+    if (this.stoned) {
+        return this.calculateStonedAttack(distance);
+    } else {
+        return this.calculateAttack(distance);
+    }
+}
 }
