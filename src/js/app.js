@@ -5,11 +5,15 @@ export default class Character {
   }
 
   get attack() {
-      return this._attack;
+    if (this.stoned) {
+        return this.calculateStonedAttack(this.distance);
+    } else {
+        return this.calculateAttack(this.distance);
+    }
   }
 
-  set attack(value) {
-      this._attack = value;
+  set attack(distance) {
+      this.distance = distance;
   }
 
   get stoned() {
@@ -29,12 +33,4 @@ export default class Character {
       const stoneValue = Math.log2(distance) * 5;
       return baseAttack - stoneValue;
   }
-
-  getAttack(distance) {
-    if (this.stoned) {
-        return this.calculateStonedAttack(distance);
-    } else {
-        return this.calculateAttack(distance);
-    }
-}
 }
